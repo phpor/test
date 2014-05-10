@@ -1,0 +1,30 @@
+<?php
+
+//关于use语法的测试
+namespace {
+	use \Phpor\Test; //这里的Test指的是名字空间Test还是类Test？
+	Test::say();	 // It can echo
+	Test\A::say();	 // It can echo
+}
+
+namespace Phpor {
+	class Test {
+		public static function say() {
+			echo  "I am Test::say()\n";
+		}
+	}
+}
+
+namespace Phpor\Test {
+	class A {
+		public static function say() {
+			echo "I am Phpor\Test\A::say()\n";
+		}
+	}
+}
+
+/**
+输出：
+I am Phpor\Test\A::say()
+I am Test::say()
+*/
