@@ -1,0 +1,27 @@
+{
+   "manifest_version": 2,
+   "minimum_chrome_version": "18",
+   "name": "test chrome extension",
+
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "css": [ "css/content.css" ],
+      "js": [ "jquery.js", "content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "description": "test by phpor",
+   "icons": {
+      "128": "/images/icon128.png",
+      "16": "/images/icon16.png",
+      "48": "/images/icon48.png"
+   },
+   "page_action": {
+      "default_icon": "/images/icon48.png",
+      "default_popup": "popup.html",
+      "default_title": "title of my plugin"
+   },
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "webRequest" ],
+   "version": "0.1.0"
+}
