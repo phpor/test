@@ -4,11 +4,11 @@
    "name": "test chrome extension",
 
    "background": {
-      "scripts": [ "background.js" ]
+      "scripts": [ "js/background.js" ]
    },
    "content_scripts": [ {
       "css": [ "css/content.css" ],
-      "js": [ "jquery.js", "content.js" ],
+      "js": [ "js/jquery.js", "js/content.js" ],
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
    "description": "test by phpor",
