@@ -4,11 +4,26 @@
    "name": "test chrome extension",
 
    "background": {
-      "scripts": [ "js/background.js" ]
+     // "scripts": [ "js/background.js" ],  // background.page 和 background.scripts 不能同时设置
+       "page": "background.html"    // 如果不设置这个，将会在运行时自动产生一个名字为： _generated_background_page.html 的空html文件
    },
+   "commands": {
+        "_execute_page_action": {
+            "description": "Open popup to toggle state",
+            "suggested_key": {
+                "default": "Ctrl+Shift+Z"
+            }
+        },
+        "test": {
+            "description": "Toggle between the debug and idle state",
+            "suggested_key": {
+                "default": "Alt+Shift+Z"
+            }
+        }
+    },
    "content_scripts": [ {
-      "css": [ "css/content.css" ],
-      "js": [ "js/jquery.js", "js/content.js" ],
+      "css": [ "/css/content.css" ],
+      "js": [ "/js/jquery.js", "/js/content.js" ],
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
    "description": "test by phpor",
@@ -17,11 +32,11 @@
       "16": "/images/icon16.png",
       "48": "/images/icon48.png"
    },
-   "page_action": {
+   "browser_action": {
       "default_icon": "/images/icon48.png",
       "default_popup": "popup.html",
       "default_title": "title of my plugin"
    },
-   "permissions": [ "tabs", "http://*/*", "https://*/*", "webRequest" ],
-   "version": "0.1.0"
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "webRequest", "unlimitedStorage", "contextMenus", "cookies", "notifications", "webRequestBlocking", "\u003Call_urls>"  ],
+   "version": "1.1.0"
 }

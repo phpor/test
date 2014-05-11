@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>my popup.html</title>
 </head>
 <body>
-<div>I am popup.html</div>
+<h2>I am popup.html</h2>
+<fieldset>
+    <legend>配置方法</legend>
+    <pre>
+      "browser_action": {
+          "default_icon": "/images/icon48.png",
+          "default_popup": "popup.html",
+          "default_title": "title of my plugin"
+       },
+    </pre>
+    对于page_action,这些配置还不够
+</fieldset>
 </body>
 </html>
