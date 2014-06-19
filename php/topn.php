@@ -1,4 +1,7 @@
 <?php
+/**
+ * eg:  i=1;while [ $((i++)) -le 100 ]; do echo $RANDOM; done |php topn.php
+ */
 $arropt = getopt('n:');
 $n = isset($arropt['n'])?$arropt['n']:10;
 
